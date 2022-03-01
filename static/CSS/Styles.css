@@ -1,0 +1,74 @@
+body {
+    background: url('../../images/bg.jpeg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.8);
+    background-size: 100%;
+    background-blend-mode: soft-light;
+    font-size: 24px;
+    /* background-image: url('img2.jpg'); */
+} 
+
+nav {
+    background-color: #002c5da4;
+}
+
+p {
+    color: #ffffff;
+    font-size: 100px;
+    text-align: center;
+}
+ 
+div{
+    margin-top: 30px;
+    border:1px rgb(168, 180, 192) solid ;
+    padding: 5px;
+    background: rgba(155, 176, 204, 0.178);
+}
+
+input[type='number']{
+    width: 400px;
+    align-content: center;
+} 
+
+select{
+    width: 400px;
+    align-content: center;
+} 
+
+h5,input[type='submit']{
+    font-size: 28;
+    font-weight: bold;
+    background-color: rgba(155, 176, 204, 0.178);
+    padding: 15px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    border:1px rgb(71, 75, 80) solid ;
+}
+
+label{
+    font-weight: bold;
+}
+
+.borders{
+    margin: 0%;
+}
+
+.container{
+    align-items: center;
+}
+
+.card{
+    display: contents;
+}
+
+h3{
+
+    text-align: center;
+} 
+
+input[type='submit']{
+    margin-left: 500px; 
+}

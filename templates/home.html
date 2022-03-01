@@ -1,0 +1,243 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Price Prediction</title>
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="../static/CSS/Styles.css">
+</head>
+<body>
+     <!-- As a heading -->
+     <nav>
+        <p>Attrition Classification</p>       
+    </nav>
+    <div class="container">
+        <form action="\predict" method="post" >
+            <div class="row borders">
+                <div class="col-sm-6 borders">
+                    <div class="card">
+                        <div class="card-body borders">
+                            <h5 class="card-title ">Employee General Info.</h5>
+                            <!-- Employee General Info. -->
+                            <div>
+                                <label for="Name" >Name</label><br>
+                                <input type="text" name="Name" id="Name" required="required" placeholder="Full Name" min="18" max="100" size="31">
+                            </div>  
+                            <div>
+                                <label for="Age" >Age</label><br>
+                                <input type="number" name="Age" id="Age" required="required" placeholder="Age" min="18" max="60" >
+                            </div>                             
+                            <div>
+                                <label>Gender</label><br>
+                                <input type="radio" name="Gender" id="Male" value=1 checked>
+                                <label for="Male">Male</label><br>
+                                <input type="radio" name="Gender" id="Female" value=0>
+                                <label for="Female">Female</label>
+                            </div>
+                            <div>
+                                <label for="MaritalStatus">Marital Status</label><br>
+                                <select name="MaritalStatus" id="MaritalStatus" required="required">
+                                    <option value=2>Single</option>
+                                    <option value=1>Married</option>
+                                    <option value=0>Divorced</option>
+                                </select>
+                            </div>  
+                            <div>
+                                <label for="Education">Education</label><br>
+                                <select name="Education" id="Education" required="required">
+                                    <option value=0>Below College</option>
+                                    <option value=1>College</option>
+                                    <option value=2>Bachelor</option>
+                                    <option value=3>Master</option>
+                                    <option value=4>Doctor</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="EducationField">Education Field</label><br>
+                                <select name="EducationField" id="EducationField" required="required">
+                                    <option value=0>HR</option>
+                                    <option value=1>Life Sciences</option>
+                                    <option value=2>Marketing</option>
+                                    <option value=3>Medical</option>
+                                    <option value=5>Technical Degree</option>
+                                    <option value=4>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 borders">   
+                    <div class="row borders"> 
+                        <div class="card ">
+                            <div class="card-body borders">
+                                <!-- Employee Survey -->
+                                <h5 class="card-title ">Employee Survey</h5>
+                                <div>
+                                    <label for="EnvironmentSatisfaction">Environment Satisfaction</label><br>
+                                    <select name="EnvironmentSatisfaction" id="EnvironmentSatisfaction" required="required">
+                                        <option value=1>Low</option>
+                                        <option value=2>Medium</option>
+                                        <option value=3>High</option>
+                                        <option value=4>Very High</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="JobSatisfaction">Job Satisfaction</label><br>
+                                    <select name="JobSatisfaction" id="JobSatisfaction" required="required">
+                                        <option value=1>Low</option>
+                                        <option value=2>Medium</option>
+                                        <option value=3>High</option>
+                                        <option value=4>Very High</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="WorkLifeBalance">Work-Life Balance</label><br>
+                                    <select name="WorkLifeBalance" id="WorkLifeBalance" required="required">
+                                        <option value=1>Bad</option>
+                                        <option value=2>Good</option>
+                                        <option value=3>Better</option>
+                                        <option value=4>Best</option>
+                                    </select>
+                                </div> 
+                            </div>
+                        </div>     
+                    </div>
+                    <div class="row borders">
+                        <div class="card">
+                            <div class="card-body">
+                                <!-- Manager Survey -->
+                                <h5 class="card-title">Manager Survey</h5>
+                                <div>
+                                    <label for="JobInvolvement">Job Involvement</label><br>
+                                    <select name="JobInvolvement" id="JobInvolvement" required="required">
+                                        <option value=1>Low</option>
+                                        <option value=2>Medium</option>
+                                        <option value=3>High</option>
+                                        <option value=4>Very High</option>
+                                    </select>
+                                </div>                      
+                                <div>
+                                    <label for="PerformanceRating">PerformanceRating</label><br>
+                                    <select name="PerformanceRating" id="PerformanceRating" required="required" >
+                                        <option value=1>Low</option>
+                                        <option value=2>Good</option>
+                                        <option value=3>Excellent</option>
+                                        <option value=4>Outstanding</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                           
+                </div>
+            </div>       
+            <div class="row borders">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title borders">Work Information</h5>
+                                    <!-- Work Information -->
+                        <div class="row">
+                            <div class="card borders">
+                                <div class="card-body borders">
+                                    <div>
+                                        <label for="Department">Department</label><br>
+                                        <select name="Department" id="Department" required="required">
+                                            <option value=0>HR</option>
+                                            <option value=1>Research & Development</option>
+                                            <option value=2>Sales</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="JobRole">Job Role</label><br>
+                                        <select name="JobRole" id="JobRole" required="required">
+                                            <option value=0>Healthcare Representative</option>
+                                            <option value=1>HR</option>
+                                            <option value=2>Laboratory Technician</option>
+                                            <option value=3>Manager</option>
+                                            <option value=4>Manufacturing Director</option>
+                                            <option value=5>Research Director</option>
+                                            <option value=6>Research Scientist</option>
+                                            <option value=7>Sales Executive</option>
+                                            <option value=8>Sales Representative</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="JobLevel">Job Level</label><br>
+                                        <input type="number" name="JobLevel" id="JobLevel" required="required" placeholder="Job level at company on a scale of 1 to 5" max="5" min="1">
+                                    </div>
+                                    <div>
+                                        <label for="MonthlyIncome">Monthly Income</label><br>
+                                        <input type="number" name="MonthlyIncome" id="MonthlyIncome" required="required" placeholder="Monthly Income" min="1000" max="500000" >
+                                    </div>
+                                    <div>
+                                        <label for="PercentSalaryHike">Salary Hike %</label><br>
+                                        <input type="number" name="PercentSalaryHike" id="PercentSalaryHike" required="required" placeholder="Percent salary hike for last year" max="100" min="0">
+                                    </div>
+                                    <div>
+                                        <label for="StockOptionLevel">Stock Option Level</label><br>
+                                        <input type="number" name="StockOptionLevel" id="StockOptionLevel" required="required" placeholder="Number of days that the employee didn't show up in 2015" min="0" max="60">
+                                    </div>
+                                    <div>
+                                        <label for="BusinessTravel">Business Travel</label><br>
+                                        <select name="BusinessTravel" id="BusinessTravel" required="required">
+                                            <option value=0>No Travel</option>
+                                            <option value=1>Travel Frequently</option>
+                                            <option value=2>Travel Rarely</option>
+                                        </select> 
+                                    </div>
+                                    <div>
+                                        <label for="DistanceFromHome">Distance from home</label><br>
+                                        <input type="number" name="DistanceFromHome" id="DistanceFromHome" required="required" placeholder="Distance from home in km" min="0" max="60">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card borders">
+                                <div class="card-body borders">
+                                    <div>
+                                        <label for="YearsAtCompany">No. years at the company</label><br>
+                                        <input type="number" name="YearsAtCompany" id="YearsAtCompany" required="required" placeholder="Total number of years spent at the company by the employee" max="42" min="0">
+                                    </div>
+                                    <div>
+                                        <label for="YearsSinceLastPromotion">Year of last promotion</label><br>
+                                        <input type="number" name="YearsSinceLastPromotion" id="YearsSinceLastPromotion" required="required" placeholder="Total number of years spent at the company by the employee" max="42" min="0">
+                                    </div>
+                                    <div>
+                                        <label for="TrainingTimesLastYear">Training Times</label><br>
+                                        <input type="number" name="TrainingTimesLastYear" id="TrainingTimesLastYear" required="required" placeholder="Total number of companies the employee has worked for" max="10" min="0">
+                                    </div>
+                                    <div>
+                                        <label for="TotalWorkingYears">Total Working Years</label><br>
+                                        <input type="number" name="TotalWorkingYears" id="TotalWorkingYears" required="required" placeholder="Total number of years the employee has worked so far" max="42" min="0">
+                                    </div>
+                                    <div>
+                                        <label for="NumCompaniesWorked">No. Companies Worked</label><br>
+                                        <input type="number" name="NumCompaniesWorked" id="NumCompaniesWorked" required="required" placeholder="Total number of companies the employee has worked for" max="10" min="0">
+                                    </div>
+                                    <div>
+                                        <label for="mean_actual_hours">Mean actual work-hours</label><br>
+                                        <input type="number" name="mean_actual_hours" id="mean_actual_hours" required="required" placeholder="Mean of actual of work-hours in 2015" min="1" max="12">
+                                    </div>
+                                    <div>
+                                        <label for="absences_days">Absences Days</label><br>
+                                        <input type="number" name="absences_days" id="absences_days" required="required" placeholder="No. days not show up" min="0" max="60">
+                                    </div>       
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Submit -->
+            <div class="row ">
+                <input type="submit" value="Submit" class="btn btn-secondary">
+            </div>
+        </form>
+        <div>
+            <h3>{{results}}</h3>
+        </div>
+        ©2022 Husam Almasri
+    </div>
+</body>
+</html>
